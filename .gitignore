@@ -1,0 +1,16 @@
+.build/
+data/
+__pycache__/
+.DS_Store
+
+# Personal test files and local configuration
+*.wav
+*.aiff
+*.m4a
+*.mp3
+*.aac
+*.caf
+*.flac
+.env
+.env.*
+*.pem

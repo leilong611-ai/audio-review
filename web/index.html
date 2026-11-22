@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>本地录音工作台</title>
+<link rel="stylesheet" href="/style.css">
+<script defer src="/app.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span>本地录音工作台</span></div>
+  <span class="local"><i></i>本机试用</span>
+</header>
+<main class="layout">
+  <aside class="catalog" aria-label="录音列表">
+    <div class="catalog-head"><h1>录音库</h1><span id="record-count" class="muted"></span></div>
+    <label class="import" for="audio-input"><span aria-hidden="true">＋</span> 导入录音</label>
+    <input class="visually-hidden" id="audio-input" type="file" accept=".wav,.m4a,.mp3,.aac,.aiff,.caf,.flac">
+    <p class="hint muted">中文录音 · 最高 64 MB</p>
+    <div id="record-list"></div>
+  </aside>
+  <section class="workspace" aria-label="录音详情">
+    <div id="status" role="status" aria-live="polite"></div>
+    <div id="empty" class="empty"><span class="empty-icon" aria-hidden="true">♫</span><h2>导入一条录音开始</h2><p>转写、回听和校对都在这台 Mac 上完成。</p></div>
+    <article id="detail" hidden>
+      <div class="detail-head">
+        <div><p id="record-label" class="kicker"></p><h2 id="record-title"></h2><p id="record-meta" class="muted"></p></div>
+        <button id="transcribe" class="primary" type="button">本机转写</button>
+      </div>
+      <div class="player">
+        <div class="player-top"><span>原音回听</span><span id="elapsed">00:00 / —</span></div>
+        <div class="audio-row">
+          <button id="play" class="play" type="button" aria-label="播放原音"><span aria-hidden="true">▶</span></button>
+          <div class="timeline">
+            <svg id="wave" viewBox="0 0 500 48" preserveAspectRatio="none" aria-hidden="true"></svg>
+            <input id="position" type="range" aria-label="播放进度" min="0" max="1" step="0.01" value="0" disabled>
+          </div>
+        </div>
+        <audio id="audio" preload="metadata"></audio>
+      </div>
+      <section class="transcript" aria-label="逐段文字">
+        <div class="transcript-head">
+          <div><h3>逐段转写</h3><p id="version" class="muted"></p></div>
+          <div id="controls" class="actions" hidden>
+            <button id="original" type="button" class="secondary" hidden>查看机器稿</button>
+            <button id="edit" type="button" class="primary">开始校对</button>
+            <button id="cancel" type="button" class="secondary" hidden>取消</button>
+            <button id="save" type="button" class="primary" hidden>保存校对</button>
+          </div>
+        </div>
+        <p id="transcript-empty" class="transcript-empty muted" hidden></p>
+        <div id="segments" class="segments"></div>
+      </section>
+    </article>
+  </section>
+</main>
+</body>
+</html>
