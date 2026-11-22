@@ -8,8 +8,8 @@
 
 ## Open an issue or pull request
 
-1. Start with an issue for a new feature or a change that affects the data written to disk.
-2. Fork this repository, create a branch, and keep the pull request focused on one change.
+1. [Open an issue](https://github.com/leilong611-ai/audio-review/issues/new/choose) for a new feature or a change that affects the data written to disk.
+2. Fork this repository, create a branch, and keep the [pull request](https://github.com/leilong611-ai/audio-review/pulls) focused on one change.
 3. Write the steps you ran and the expected and observed behavior. Include macOS, Python, SDK and browser versions when they are relevant.
 4. Use only synthetic examples. Replace personal file paths and remove real names, credentials, recordings, transcripts and identifying screenshots before sharing.
 

@@ -1,4 +1,4 @@
-# Local Audio Workbench｜本地录音工作台
+# Audio Review｜本地录音工作台
 
 在 Mac 上把音频转成带时间戳的中文转写。你可以点击时间戳回听，修改文字并保存校对版本。工作台保留导入的原音和第一次机器转写结果。
 
@@ -29,7 +29,7 @@
 
 当前界面和转写使用简体中文。工作台提供手动导入、回听与校对，不包含采集、同步、自动摘要或协作功能。
 
-欢迎用虚构样本报告问题，也欢迎提交安装说明、测试和交互改进。
+欢迎用虚构样本[报告问题](https://github.com/leilong611-ai/audio-review/issues/new/choose)，也欢迎提交安装说明、测试和交互改进。
 
 [English README](README.md) · [贡献指南](CONTRIBUTING.md) · [架构与数据流](docs/architecture.md)
 

@@ -1,4 +1,4 @@
-# Local Audio Workbench
+# Audio Review｜本地录音工作台
 
 A small macOS workbench for transcribing audio, jumping to any transcript segment, and saving corrections while keeping the original audio and machine transcript.
 
@@ -19,12 +19,12 @@ The workbench listens only on the local loopback address. It creates a private r
 
 ## Help improve it
 
-A useful first contribution can be an installation report, a repeatable test for playback or correction, or clearer instructions for a missing speech asset. Open an issue with your OS and browser versions, the steps, and the result. Pull requests are welcome in English and Chinese.
+A useful first contribution can be an installation report, a repeatable test for playback or correction, or clearer instructions for a missing speech asset. [Open an issue](https://github.com/leilong611-ai/audio-review/issues/new/choose) with your OS and browser versions, the steps, and the result. Pull requests are welcome in English and Chinese.
 
 [Contributing guide](CONTRIBUTING.md) · [Architecture and data flow](docs/architecture.md)
 
 ## License
 
-Local Audio Workbench is licensed under the GNU Affero General Public License, version 3 or any later version (AGPL-3.0-or-later).
+Audio Review is licensed under the GNU Affero General Public License, version 3 or any later version (AGPL-3.0-or-later).
 
 [Full license](LICENSE) · [Third-party notices and modification details](THIRD_PARTY_NOTICES.md)

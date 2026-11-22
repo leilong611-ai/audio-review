@@ -1,6 +1,6 @@
 # Architecture and data flow
 
-Local Audio Workbench serves its browser interface from a Python process on the same Mac. The process runs a Swift helper that uses installed Apple Speech assets. The browser and helper use the same local library.
+Audio Review serves its browser interface from a Python process on the same Mac. The process runs a Swift helper that uses installed Apple Speech assets. The browser and helper use the same local library.
 
 | Step | Input | Result |
 | --- | --- | --- |
