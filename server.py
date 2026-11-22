@@ -20,6 +20,7 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parent
 WEB = ROOT / 'web'
+LOOPBACK_HOST = '127.0.0.1'
 DEFAULT_DATA = Path.home() / 'Library' / 'Application Support' / 'Local Audio Workbench' / 'Recordings'
 AUDIO_TYPES = {
     '.wav': 'audio/wav', '.mp3': 'audio/mpeg', '.m4a': 'audio/mp4',
@@ -360,12 +361,12 @@ class Handler(BaseHTTPRequestHandler):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--port', type=int, default=8879)
+    parser.add_argument('--port', type=int, default=0, help='本机端口，默认由系统自动分配')
     parser.add_argument('--data-dir', type=Path, default=DEFAULT_DATA, help='仓库以外的本机录音库')
     parser.add_argument('--check', action='store_true', help='检查环境和中文语音资产，不启动工作台')
     args = parser.parse_args()
-    if not 1024 <= args.port <= 65535:
-        parser.error('端口须在 1024–65535 之间。')
+    if args.port != 0 and not 1024 <= args.port <= 65535:
+        parser.error('请选择 1024–65535 之间的端口，或使用 0 让系统分配。')
     data_dir = args.data_dir.resolve()
     if data_dir == ROOT or ROOT in data_dir.parents:
         parser.error('请把录音库放在源码目录之外。')
@@ -396,8 +397,12 @@ def main():
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError:
             parser.exit(1, '此数据目录已有工作台在运行。\n')
-        with ThreadingHTTPServer(('127.0.0.1', args.port), Handler) as server:
-            server.host = f'127.0.0.1:{args.port}'
+        try:
+            server = ThreadingHTTPServer((LOOPBACK_HOST, args.port), Handler)
+        except OSError:
+            parser.exit(1, '无法启动本机工作台。请省略 --port，让系统分配可用端口。\n')
+        with server:
+            server.host = f'{LOOPBACK_HOST}:{server.server_port}'
             server.token = secrets.token_hex(32)
             server.library = library
             print('http://' + server.host, flush=True)

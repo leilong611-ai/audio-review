@@ -11,4 +11,4 @@ macOS, Python, macOS SDK and browser versions
 
 ## Expected and actual result / 预期与实际结果
 
-Share synthetic inputs and redacted error text only. Keep personal paths, account details, recordings, transcripts and identifying screenshots private.
+Share synthetic inputs and redacted error text only. Keep runtime addresses, personal paths, account details, recordings, transcripts and identifying screenshots private.

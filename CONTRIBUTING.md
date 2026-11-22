@@ -13,7 +13,9 @@
 3. Write the steps you ran and the expected and observed behavior. Include macOS, Python, SDK and browser versions when they are relevant.
 4. Use only synthetic examples. Replace personal file paths and remove real names, credentials, recordings, transcripts and identifying screenshots before sharing.
 
-For code changes, try `/bin/zsh ./Start.command --check` and run the demo in [the README](README.md). A change to imports or corrections should also verify that the original audio and machine transcript are preserved. Discuss network calls, data collection and changes to default storage before implementing them.
+For code changes, try `/bin/zsh ./Start.command --check` and run the demo in [the README](README.md). A change to imports or corrections should also verify that the original audio and machine transcript are preserved. Use English for code names, comments, and commit messages. Keep the English and Simplified Chinese setup steps in sync when behavior changes.
+
+The [architecture and data flow](docs/architecture.md) describes what the app reads, writes, and serves. Update it and describe your verification in the PR when a change affects storage, access, or networking. Use synthetic examples and redact terminal output before sharing it.
 
 欢迎用中文提交 Issue 或 PR。首次参与可以从安装验证、回听和校对测试、错误提示入手。请用虚构样例复现，并说明环境、步骤、预期与实际结果。
 
